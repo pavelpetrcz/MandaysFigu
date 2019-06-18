@@ -7,7 +7,7 @@ import dao.ResultDao;
 public class GetDataFlow {
 	
 	/**
-	 * Retrieve data from DB
+	 * Retrieve data from Database
 	 */
 	public ResultDao execute(RequestDao req, ResultDao res) {
 		DataAccessImpl item = new DataAccessImpl();
