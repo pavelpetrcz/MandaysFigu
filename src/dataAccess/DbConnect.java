@@ -23,12 +23,8 @@ public class DbConnect {
 	 */
 	public Connection connect() throws SQLException, ClassNotFoundException {
 		try {
-			Properties props = readProperties();
-		    String url = props.getProperty("db.url");
-		    String user = props.getProperty("db.user");
-		    String passwd = props.getProperty("db.passwd");
 			Class.forName("org.postgresql.Driver");
-			conn = DriverManager.getConnection(url, user, passwd);
+			conn = DriverManager.getConnection("jdbc:postgresql://localhost:5432/mandays", "mandaysUser", "mandaysUser");
 			}
 	    catch (SQLException e) {
 	        e.printStackTrace();
