@@ -4,6 +4,7 @@ import javax.ws.rs.GET;
 import javax.ws.rs.Path;
 import javax.ws.rs.PathParam;
 import javax.ws.rs.Produces;
+import javax.ws.rs.QueryParam;
 import javax.ws.rs.core.MediaType;
 
 import dao.MonthDao;
@@ -22,14 +23,16 @@ public class MonthResource {
 	 * @param year
 	 * @return data about selected month in JSON
 	 */
-	@Path("/month/{monthId}/{year}")
+	@Path("/month")
     @GET
     @Produces(MediaType.APPLICATION_JSON)
     public MonthDao getMonthResouce(
-    	@PathParam("monthId") int month, 
-    	@PathParam ("year") int year) {
+    	@QueryParam("month") int month, 
+    	@QueryParam("year") int year,
+    	@QueryParam("hours") double hours) {
 		req.setMonth(month);
 		req.setYear(year);
+		req.setHoursPerDay(hours);
 		CalcMonthFlow calculation = new CalcMonthFlow();
 		calculation.execute(req, res);
 		

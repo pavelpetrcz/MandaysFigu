@@ -1,22 +1,37 @@
 package dataAccess;
 
 import java.util.HashMap;
+
+import dao.MonthDao;
 import dao.RequestDao;
 import dao.ResultDao;
 
 public class GetDataFlow {
+	
 	
 	/**
 	 * Retrieve data from Database
 	 */
 	public ResultDao execute(RequestDao req, ResultDao res) {
 		DataAccessImpl item = new DataAccessImpl();
-		HashMap<String, Integer> itemData = item.getMonthData(req.getMonth(), req.getYear());
+		HashMap<String, Integer> itemData = new HashMap<String, Integer>();
+		MonthDao m = new MonthDao();
 		
-		res.getMonthData().setMonth(itemData.get("month"));
-		res.getMonthData().setYear(itemData.get("year"));
-		res.getMonthData().setWorkingDays(itemData.get("workingdays"));
-		res.getMonthData().setWorkingDaysHolidays(itemData.get("workingdayswithoutholidays"));
+		itemData.putAll(item.getMonthData(req.getMonth(), req.getYear()));
+		System.out.println(itemData.toString());
+		m.setMonth(itemData.get("month"));
+		m.setYear(itemData.get("year"));
+		m.setWorkingDays(itemData.get("workingdays"));
+		m.setWorkingDaysHolidays(itemData.get("workingdayswithoutholidays"));
+		res.setMonthData(m);
+		
+		/*
+		 * res.getMonthData().setMonth(itemData.get("month"));
+		 * res.getMonthData().setYear(itemData.get("year"));
+		 * res.getMonthData().setWorkingDays(itemData.get("workingdays"));
+		 * res.getMonthData().setWorkingDaysHolidays(itemData.get(
+		 * ""));
+		 */
 		
 		return res;
 	}

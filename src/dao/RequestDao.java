@@ -3,6 +3,8 @@ package dao;
 public class RequestDao {
 	private int month;
 	private int quarter;
+	private double hoursPerDay; // represents number of hours in day
+	
 	/**
 	 * @return the quater
 	 */
@@ -16,7 +18,7 @@ public class RequestDao {
 		this.quarter = quarter;
 	}
 	private int year;
-	private double hoursPerDay; // represents number of hours in day
+	
 	/**
 	 * @return the hoursPerDay
 	 */
