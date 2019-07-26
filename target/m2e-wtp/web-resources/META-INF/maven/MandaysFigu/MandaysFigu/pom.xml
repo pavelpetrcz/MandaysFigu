@@ -30,10 +30,12 @@
     
     <resources>
      <resource>
-       <directory>resource</directory>
+       <directory>/MandaysFigu/resource</directory>
        <filtering>true</filtering>
      </resource>
    </resources>
+   
+
   </build>
   
   <dependencies>
@@ -76,9 +78,15 @@
 	</dependency>
 	
 	<dependency>
-    <groupId>org.primefaces</groupId>
-    <artifactId>primefaces</artifactId>
-    <version>7.0</version>
+    	<groupId>org.primefaces</groupId>
+    	<artifactId>primefaces</artifactId>
+    	<version>7.0</version>
+	</dependency>
+	
+	<dependency>
+    	<groupId>org.jasypt</groupId>
+    	<artifactId>jasypt</artifactId>
+    	<version>1.9.2</version>
 	</dependency>
 	
   </dependencies>

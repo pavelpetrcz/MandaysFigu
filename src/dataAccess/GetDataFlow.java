@@ -8,7 +8,6 @@ import dao.ResultDao;
 
 public class GetDataFlow {
 	
-	
 	/**
 	 * Retrieve data from Database
 	 */
@@ -24,14 +23,6 @@ public class GetDataFlow {
 		m.setWorkingDays(itemData.get("workingdays"));
 		m.setWorkingDaysHolidays(itemData.get("workingdayswithoutholidays"));
 		res.setMonthData(m);
-		
-		/*
-		 * res.getMonthData().setMonth(itemData.get("month"));
-		 * res.getMonthData().setYear(itemData.get("year"));
-		 * res.getMonthData().setWorkingDays(itemData.get("workingdays"));
-		 * res.getMonthData().setWorkingDaysHolidays(itemData.get(
-		 * ""));
-		 */
 		
 		return res;
 	}
