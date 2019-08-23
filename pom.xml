@@ -22,7 +22,7 @@
       
       <plugin>
         <artifactId>maven-ear-plugin</artifactId>
-        <version>${version.ear.plugin}</version>
+        <version>3.6.1</version>
         <configuration>
            <outputDirectory>target</outputDirectory>
         </configuration>
