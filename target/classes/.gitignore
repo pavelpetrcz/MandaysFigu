@@ -1,2 +1,8 @@
+/Main.class
+/config.properties
+/dao/
 /dataAccess/
-/Procfile
+/log4j.xml
+/logic/
+/present/
+/rest/

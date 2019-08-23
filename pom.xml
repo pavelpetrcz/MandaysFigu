@@ -19,6 +19,14 @@
           <target>1.8</target>
         </configuration>
       </plugin>
+      
+      <plugin>
+        <artifactId>maven-ear-plugin</artifactId>
+        <version>${version.ear.plugin}</version>
+        <configuration>
+           <outputDirectory>target</outputDirectory>
+        </configuration>
+       </plugin>
        <plugin>
             <groupId>org.apache.maven.plugins</groupId>
             <artifactId>maven-dependency-plugin</artifactId>
@@ -101,12 +109,6 @@
     	<groupId>org.primefaces</groupId>
     	<artifactId>primefaces</artifactId>
     	<version>7.0</version>
-	</dependency>
-	
-	<dependency>
-    	<groupId>org.jasypt</groupId>
-    	<artifactId>jasypt</artifactId>
-    	<version>1.9.2</version>
 	</dependency>
 	
   </dependencies>
