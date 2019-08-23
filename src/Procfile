@@ -1,1 +1,1 @@
-web: java -jar target/Mandays-1.0.0.war
+web: java -jar target/MandaysFigu-1.war
