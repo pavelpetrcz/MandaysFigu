@@ -1,7 +1,6 @@
 package dataAccess;
 
 import java.io.BufferedReader;
-import java.io.FileInputStream;
 import java.io.IOException;
 import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
@@ -11,9 +10,7 @@ import java.sql.*;
 import java.util.HashMap;
 import java.util.Properties;
 
-import org.apache.log4j.Logger;
-import org.jasypt.encryption.pbe.StandardPBEStringEncryptor;
-import org.jasypt.properties.EncryptableProperties;	
+import org.apache.log4j.Logger;	
 
 public class DbConnect {
 	
@@ -27,24 +24,24 @@ public class DbConnect {
 	public Connection connect() throws SQLException, ClassNotFoundException {
 		try {
 			Class.forName("org.postgresql.Driver");
-			StandardPBEStringEncryptor encryptor = new StandardPBEStringEncryptor();
-			encryptor.setPassword("pavel"); 
-			encryptor.setAlgorithm("PBEWithHMACSHA512AndAES_256");
+			//StandardPBEStringEncryptor encryptor = new StandardPBEStringEncryptor();
+			//encryptor.setPassword("pavel"); 
+			//encryptor.setAlgorithm("PBEWithHMACSHA512AndAES_256");
 			
 			//load config file
-			Properties props = new EncryptableProperties(encryptor);
-			FileInputStream fis = new FileInputStream("/resource/config.properties");
-			props.load(fis);
+			//Properties props = new EncryptableProperties(encryptor);
+			//FileInputStream fis = new FileInputStream("/resource/config.properties");
+			//props.load(fis);
 
 			//read config
-			String datasourceUsername = props.getProperty("DB.username");
-			String datasourcePassword = props.getProperty("DB.password");
-			String datasourceUrl = props.getProperty("DB.url");
+			//String datasourceUsername = props.getProperty("DB.username");
+			//String datasourcePassword = props.getProperty("DB.password");
+			//String datasourceUrl = props.getProperty("DB.url");
 			
 			//setup connection to DB
-			conn = DriverManager.getConnection(datasourceUrl, datasourceUsername, datasourcePassword);
+			conn = DriverManager.getConnection(System.getenv("DATABASE_URL"));
 			}
-	    catch (SQLException | IOException e) {
+	    catch (SQLException e) {
 	        e.printStackTrace();
 	    	}
 		return conn;
