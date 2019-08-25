@@ -28,6 +28,12 @@
         </configuration>
        </plugin>
        
+        <plugin>
+            <groupId>org.wildfly.plugins</groupId>
+            <artifactId>wildfly-maven-plugin</artifactId>
+            <version>3.6.1</version>
+        </plugin>
+       
       <plugin>
         <artifactId>maven-war-plugin</artifactId>
         <version>3.2.1</version>
