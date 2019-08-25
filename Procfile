@@ -1,1 +1,1 @@
-web: target/wildfly-16.0.0.Final/bin/standalone.sh -Djboss.http.port=$PORT -b 0.0.0.0
+web: target/classes -Djboss.http.port=$PORT -b 0.0.0.0
