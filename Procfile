@@ -1,1 +1,1 @@
-web: target/classes -Djboss.http.port=$PORT -b 0.0.0.0
+web: java $JAVA_OPTS -cp target/classes:target/dependency/*
