@@ -39,7 +39,7 @@ public class DbConnect {
 			//String datasourceUrl = props.getProperty("DB.url");
 			
 			//setup connection to DB
-			conn = DriverManager.getConnection(System.getenv("DATABASE_URL"));
+			conn = DriverManager.getConnection("jdbc:postgresql://localhost:5432/mandays", "mandaysUser", "mandaysUser");
 			}
 	    catch (SQLException e) {
 	        e.printStackTrace();
