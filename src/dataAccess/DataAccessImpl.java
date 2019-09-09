@@ -26,10 +26,8 @@ public class DataAccessImpl {
 			data = dbconn.query(sql);
 			dbconn.quitConnection();
 		} catch (ClassNotFoundException e1) {
-			// TODO Auto-generated catch block
 			e1.printStackTrace();
 		} catch (SQLException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 		return data;
