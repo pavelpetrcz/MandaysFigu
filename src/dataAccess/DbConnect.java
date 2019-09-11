@@ -24,20 +24,7 @@ public class DbConnect {
 	public Connection connect() throws SQLException, ClassNotFoundException {
 		try {
 			Class.forName("org.postgresql.Driver");
-			//StandardPBEStringEncryptor encryptor = new StandardPBEStringEncryptor();
-			//encryptor.setPassword("pavel"); 
-			//encryptor.setAlgorithm("PBEWithHMACSHA512AndAES_256");
-			
-			//load config file
-			//Properties props = new EncryptableProperties(encryptor);
-			//FileInputStream fis = new FileInputStream("/resource/config.properties");
-			//props.load(fis);
-
-			//read config
-			//String datasourceUsername = props.getProperty("DB.username");
-			//String datasourcePassword = props.getProperty("DB.password");
-			//String datasourceUrl = props.getProperty("DB.url");
-			
+						
 			//setup connection to DB
 			conn = DriverManager.getConnection(System.getenv("DATABASE_URL"));
 			}
