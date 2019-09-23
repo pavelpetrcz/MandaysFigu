@@ -26,7 +26,7 @@ public class DbConnect {
 			Class.forName("org.postgresql.Driver");
 						
 			//setup connection to DB
-			String databaseUrl = System.getenv("DATABASE_URL");
+			String databaseUrl = System.getenv("DATABASE_URL2");
 			String databaseUser = System.getenv("DATABASE_USER");
 			String databasePass = System.getenv("DATABASE_PASS");
 			conn = DriverManager.getConnection("jdbc:" + databaseUrl.toString(), databaseUser.toString(), databasePass.toString());
