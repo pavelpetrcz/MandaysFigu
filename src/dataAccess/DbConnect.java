@@ -2,6 +2,8 @@ package dataAccess;
 
 import java.io.BufferedReader;
 import java.io.IOException;
+import java.net.URI;
+import java.net.URISyntaxException;
 import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
 import java.nio.file.Path;
@@ -20,16 +22,19 @@ public class DbConnect {
 	 * @return object with connection to database
 	 * @throws SQLException
 	 * @throws ClassNotFoundException
+	 * @throws URISyntaxException 
 	 */
-	public Connection connect() throws SQLException, ClassNotFoundException {
+	public Connection connect() throws SQLException, ClassNotFoundException, URISyntaxException {
 		try {
 			Class.forName("org.postgresql.Driver");
 						
 			//setup connection to DB
-			String databaseUrl = System.getenv("DATABASE_URL2");
-			String databaseUser = System.getenv("DATABASE_USER");
-			String databasePass = System.getenv("DATABASE_PASS");
-			conn = DriverManager.getConnection("jdbc:" + databaseUrl.toString(), databaseUser.toString(), databasePass.toString());
+			URI dbUri = new URI(System.getenv("DATABASE_URL"));
+
+		    String username = dbUri.getUserInfo().split(":")[0];
+		    String password = dbUri.getUserInfo().split(":")[1];
+		    String dbUrl = "jdbc:postgresql://" + dbUri.getHost() + ':' + dbUri.getPort() + dbUri.getPath();
+			conn = DriverManager.getConnection(dbUrl, username, password);
 			}
 	    catch (SQLException e) {
 	        e.printStackTrace();
