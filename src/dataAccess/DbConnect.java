@@ -63,7 +63,7 @@ public class DbConnect {
 			
 			while (result.next()) {
 				data.put("workingdays", result.getInt("workingdays"));
-				data.put("workingdayswithoutholidays", result.getInt("workingdays_without_holidays"));
+				data.put("workingdayswithoutholidays", result.getInt("workingdayswithoutholidays"));
 				data.put("month", result.getInt("month"));
 				data.put("year", result.getInt("year"));
 			}
