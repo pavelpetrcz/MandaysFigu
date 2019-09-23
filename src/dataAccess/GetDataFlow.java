@@ -1,5 +1,6 @@
 package dataAccess;
 
+import java.net.URISyntaxException;
 import java.util.HashMap;
 
 import dao.MonthDao;
@@ -10,8 +11,9 @@ public class GetDataFlow {
 	
 	/**
 	 * Retrieve data from Database
+	 * @throws URISyntaxException 
 	 */
-	public ResultDao execute(RequestDao req, ResultDao res) {
+	public ResultDao execute(RequestDao req, ResultDao res) throws URISyntaxException {
 		DataAccessImpl item = new DataAccessImpl();
 		HashMap<String, Integer> itemData = new HashMap<String, Integer>();
 		MonthDao m = new MonthDao();

@@ -1,5 +1,7 @@
 package rest;
 
+import java.net.URISyntaxException;
+
 import javax.ws.rs.GET;
 import javax.ws.rs.Path;
 import javax.ws.rs.PathParam;
@@ -22,6 +24,7 @@ public class MonthResource {
 	 * @param month
 	 * @param year
 	 * @return data about selected month in JSON
+	 * @throws URISyntaxException 
 	 */
 	@Path("/month")
     @GET
@@ -29,7 +32,7 @@ public class MonthResource {
     public MonthDao getMonthResouce(
     	@QueryParam("month") int month, 
     	@QueryParam("year") int year,
-    	@QueryParam("hours") double hours) {
+    	@QueryParam("hours") double hours) throws URISyntaxException {
 		req.setMonth(month);
 		req.setYear(year);
 		req.setHoursPerDay(hours);
