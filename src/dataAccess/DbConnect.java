@@ -39,6 +39,12 @@ public class DbConnect {
 	    catch (SQLException e) {
 	        e.printStackTrace();
 	    	}
+		catch (URISyntaxException ex) {
+			ex.printStackTrace();
+		}
+		catch (ClassNotFoundException exc) {
+			exc.printStackTrace();
+		}
 		return conn;
 	}
 	
