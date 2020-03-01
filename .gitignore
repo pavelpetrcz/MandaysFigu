@@ -4,4 +4,4 @@ target/**
 *.war
 *.ear
 *.class
-*.project
+*.project	
