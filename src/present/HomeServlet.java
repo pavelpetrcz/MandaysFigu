@@ -81,10 +81,14 @@ public class HomeServlet extends HttpServlet {
 		String yearInput = request.getParameter("year");
 		String hoursInput = request.getParameter("hours");
 		
-		response.getWriter().println(monthInput);
-		response.getWriter().println(yearInput);
-		response.getWriter().println(hoursInput);
-
+		//response.getWriter().println(monthInput);
+		//response.getWriter().println(yearInput);
+		//response.getWriter().println(hoursInput);
+		
+		//session.setAttribute("m", monthInput);
+		
+		response.sendRedirect("Result.jsp");
+		
 		
 		/*try {
 			//validace 

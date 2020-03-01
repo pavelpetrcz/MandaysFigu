@@ -39,13 +39,10 @@
   				<div class="collapse navbar-collapse" id="navbarSupportedContent">
     				<ul class="navbar-nav mr-auto">
 				      <li class="nav-item">
-				        <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+				        <a class="nav-link" href="Home.jsp">Home<span class="sr-only">(current)</span></a>
 				      </li>
 				      <li class="nav-item">
 				        <a class="nav-link" href="#">API</a>
-				      </li>
-				      <li class="nav-item">
-				        <a class="nav-link" href="#">Wiki</a>
 				      </li>
     				</ul>
   				</div>
