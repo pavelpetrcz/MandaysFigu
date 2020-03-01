@@ -28,21 +28,24 @@ public class DbConnect {
 		try {
 			Class.forName("org.postgresql.Driver");
 						
-			//setup connection to DB from environment variable
-			URI dbUri = new URI(System.getenv("DATABASE_URL"));
+		    //TEST
+		    conn = DriverManager.getConnection("jdbc:postgresql://localhost:5432/mandays", "mandaysUser", "mandaysUser");
+		    //PROD
+		    //setup connection to DB from environment variable
+			//URI dbUri = new URI(System.getenv("DATABASE_URL"));
 
-		    String username = dbUri.getUserInfo().split(":")[0];
-		    String password = dbUri.getUserInfo().split(":")[1];
-		    String dbUrl = "jdbc:postgresql://" + dbUri.getHost() + ':' + dbUri.getPort() + dbUri.getPath();
+			//String username = dbUri.getUserInfo().split(":")[0];
+		    //String password = dbUri.getUserInfo().split(":")[1];
+		    //String dbUrl = "jdbc:postgresql://" + dbUri.getHost() + ':' + dbUri.getPort() + dbUri.getPath();
 		    //establish connection and return
-			conn = DriverManager.getConnection(dbUrl, username, password);
+		    //conn = DriverManager.getConnection(dbUrl, username, password);
 			}
 	    catch (SQLException e) {
 	        e.printStackTrace();
 	    	}
-		catch (URISyntaxException ex) {
-			ex.printStackTrace();
-		}
+		/*
+		 * catch (URISyntaxException ex) { ex.printStackTrace(); }
+		 */
 		catch (ClassNotFoundException exc) {
 			exc.printStackTrace();
 		}
