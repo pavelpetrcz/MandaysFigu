@@ -62,9 +62,8 @@
     			<!-- prostření obsahovej panel -->
     			<div class="col-4">
       				<p>Počet dnů</p>
-      				<p><span class="text_background_yellow">20</span></p>
+      				<p><span class="text_background_yellow">${workingDays}</span></p>
     			</div>
-    			
    			 		<!-- Pravy prázdnej panel -->
     				<div class="col"></div>
   			</div>
@@ -76,7 +75,7 @@
     			<!-- prostření obsahovej panel -->
     			<div class="col-4">
       				<p>Počet dnů se svátky</p>
-      				<p><span class="text_background_yellow">21</span></p>
+      				<p><span class="text_background_yellow">${workingDaysWithoutHolidays}</span></p>
     			</div>
 
    			 		<!-- Pravy prázdnej panel -->
@@ -90,7 +89,7 @@
     			<!-- prostření obsahovej panel -->
     			<div class="col-4">
       				<p>Počet hodin</p>
-      				<p><span class="text_background_yellow">160</span></p>
+      				<p><span class="text_background_yellow">${workingHours}</span></p>
     			</div>
 
    			 		<!-- Pravy prázdnej panel -->
@@ -104,16 +103,16 @@
     			<!-- prostření obsahovej panel -->
     			<div class="col-4">
       				<p>Počet hodin se svátky</p>
-      				<p><span class="text_background_yellow">168</span></p>
+      				<p><span class="text_background_yellow">${workingHoursWithoutHOlidays}</span></p>
       				<br>
+      				<form action="Home.jsp">
 					<button type="button" class="btn btn-primary btn-sm center">Zpět</button>
+					</form>
     			</div>
 
    			 		<!-- Pravy prázdnej panel -->
     				<div class="col"></div>
   			</div>
 		</div>
-
-		
    	</body>
 </html>

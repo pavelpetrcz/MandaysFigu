@@ -63,21 +63,21 @@
   						<div class="input-group-prepend">
     						<span class="input-group-text" id="basic-addon1">Měsíc</span>
   						</div>
-  						<input type="text" class="form-control" name="month" value="${data.month}" placeholder="05" aria-label="Month" aria-describedby="basic-addon1">
+  						<input type="text" class="form-control" name="month" value="${data.month}" placeholder="Zadejte měsíc" aria-label="Month" aria-describedby="basic-addon1">
 					</div>
 
 					<div class="input-group mb-3 input-group-sm">
   						<div class="input-group-prepend">
     						<span class="input-group-text" id="basic-addon1">Rok</span>
   						</div>
-  						<input type="text" class="form-control" name="year" value="${data.year}" placeholder="2019" aria-label="Year" aria-describedby="basic-addon1">
+  						<input type="text" class="form-control" name="year" value="${data.year}" placeholder="Zadejte rok" aria-label="Year" aria-describedby="basic-addon1">
 					</div>
 
 					<div class="input-group mb-3 input-group-sm">
   						<div class="input-group-prepend">
     						<span class="input-group-text" id="basic-addon1" >Hodin</span>
   						</div>
-  						<input type="text" class="form-control" name="hours" value="${data.hours}" placeholder="7.5" aria-label="Hours" aria-describedby="basic-addon1" data-toggle="tooltip" data-placement="right" title="Použijte desetinnou tečku.">
+  						<input type="text" class="form-control" name="hours" value="${data.hours}" placeholder="Zadejte počet hodin (např. 7.5)" aria-label="Hours" aria-describedby="basic-addon1" data-toggle="tooltip" data-placement="right" title="Použijte desetinnou tečku.">
 					</div>
 						<input type="submit" class="btn btn-primary btn-sm" value="Spočítej">	
 						
