@@ -10,9 +10,7 @@ import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.sql.*;
 import java.util.HashMap;
-import java.util.Properties;
-
-import org.apache.log4j.Logger;	
+import java.util.Properties;	
 
 public class DbConnect {
 	
@@ -72,8 +70,8 @@ public class DbConnect {
 				data.put("year", result.getInt("year"));
 			}
 		} catch (SQLException e) {
-			final Logger logger = Logger.getLogger(DbConnect.class);
-			logger.error("SQL query in DbConnect.java failed:" + DbConnect.readProperties());
+			//final Logger logger = Logger.getLogger(DbConnect.class);
+			//logger.error("SQL query in DbConnect.java failed:" + DbConnect.readProperties());
 			e.printStackTrace();
 		}
 		return data;

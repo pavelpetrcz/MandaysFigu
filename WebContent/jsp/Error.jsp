@@ -19,11 +19,6 @@
 			<!-- jQuery -->
 			<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 			
-			<script>
-				$(document).ready(function(){
-    			$('[data-toggle="tooltip"]').tooltip();   
-				});
-				</script>
     	</head>
     	<body class="text-monospace">
     		<!-- Navigační lišta -->
@@ -45,48 +40,29 @@
   				</div>
 			</nav>
 		
-		<!-- uvodni sedy pruh -->
 		<div class="jumbotron"> 
-					<p>Kalkulačka spočítá počet dnů a hodin v zadaném měsíci a roce včetně a bez svátků.</p>
+			<h3 class="jumbotron-fluid text-center">Jejda ... něco je špatně.</h3>
 		</div>
+		
+		<div class="alert alert-primary text-center" role="alert">${errorMessage}</div>
 		
 		<!-- Začátek kontejneru sloupců -->
 		<div class="container">
-			<!-- první řádka -->
   			<div class="row">
-  				<!-- Level prázdnej panel -->
+  				<!-- Levy prázdnej panel -->
     			<div class="col"></div>
     
     			<!-- prostření obsahovej panel -->
-    			<div class="col-6">
-    			<form action="compute" method="POST">
-            		<div class="input-group mb-3 input-group-sm">
-  						<div class="input-group-prepend">
-    						<span class="input-group-text" id="basic-addon1">Měsíc</span>
-  						</div>
-  						<input type="text" class="form-control" name="month" value="${data.month}" placeholder="Zadejte měsíc" aria-label="Month" aria-describedby="basic-addon1">
-					</div>
+    			<div class="col-4 text-center">
+      				<form action="Home.jsp">
+						<input type="submit" class="btn btn-primary btn-sm" value="Zpět">
+					</form>	
+    			</div>
 
-					<div class="input-group mb-3 input-group-sm">
-  						<div class="input-group-prepend">
-    						<span class="input-group-text" id="basic-addon1">Rok</span>
-  						</div>
-  						<input type="text" class="form-control" name="year" value="${data.year}" placeholder="Zadejte rok" aria-label="Year" aria-describedby="basic-addon1">
-					</div>
-
-					<div class="input-group mb-3 input-group-sm">
-  						<div class="input-group-prepend">
-    						<span class="input-group-text" id="basic-addon1" >Hodin</span>
-  						</div>
-  						<input type="text" class="form-control" name="hours" value="${data.hours}" placeholder="Zadejte počet hodin (např. 7.5)" aria-label="Hours" aria-describedby="basic-addon1" data-toggle="tooltip" data-placement="right" title="Použijte desetinnou tečku.">
-					</div>
-						<input type="submit" class="btn btn-primary btn-sm" value="Spočítej">	
-						
-					</form>
-    				</div>
-   			 		<!-- Level prázdnej panel -->
+   			 		<!-- Pravy prázdnej panel -->
     				<div class="col"></div>
-  				</div>
-			</div>
+  			</div>
+		</div>
+		
    		</body>
 </html>

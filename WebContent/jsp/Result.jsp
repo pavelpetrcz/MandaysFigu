@@ -54,6 +54,7 @@
 
 <!-- Začátek kontejneru sloupců -->
 		<div class="container">
+		
 			<!-- první řádka -->
   			<div class="row">
   				<!-- Level prázdnej panel -->
@@ -106,7 +107,7 @@
       				<p><span class="text_background_yellow">${workingHoursWithoutHOlidays}</span></p>
       				<br>
       				<form action="Home.jsp">
-					<button type="button" class="btn btn-primary btn-sm center">Zpět</button>
+						<input type="submit" class="btn btn-primary btn-sm" value="Zpět">
 					</form>
     			</div>
 

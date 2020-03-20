@@ -2,8 +2,6 @@ package present;
 
 import java.io.IOException;
 import java.net.URISyntaxException;
-import java.util.List;
-import java.util.Map;
 import java.util.regex.Pattern;
 
 import javax.servlet.RequestDispatcher;
@@ -13,6 +11,8 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+
+import org.apache.commons.lang.StringUtils;
 
 import dao.RequestDao;
 import dao.ResultDao;
@@ -72,6 +72,8 @@ public class HomeServlet extends HttpServlet {
 		String yearInput = request.getParameter("year");
 		String hoursInput = request.getParameter("hours");
 		
+		ServletContext sc = getServletContext();
+		
 		int monthInt = 0;
 		int yearInt = 0;
 		double hoursD = 0.0;
@@ -79,10 +81,10 @@ public class HomeServlet extends HttpServlet {
 		try {
 			//validation of inputs
 			monthInt = validateMonth(monthInput);
-			hoursD = validateHours(hoursInput);
+			hoursD = checkHoursNoLongerDay(validateHoursAndConvert(hoursInput)) ;
 			yearInt = validateYear(yearInput);
 			
-			
+			//set request to calculate with
 			req.setMonth(monthInt);
 			req.setYear(yearInt);
 			req.setHoursPerDay(hoursD);
@@ -93,7 +95,7 @@ public class HomeServlet extends HttpServlet {
 				calculation.execute(req, res);
 				
 				//setting result data
-				ServletContext sc = getServletContext();
+				
 				sc.setAttribute("month", res.getMonthData().getMonth());
 				sc.setAttribute("year", res.getMonthData().getYear());
 				sc.setAttribute("workingDays", res.getMonthData().getWorkingDays());
@@ -110,7 +112,9 @@ public class HomeServlet extends HttpServlet {
 			}
 		}
 		catch (ServletException ex) {
-			ex.getMessage();
+			sc.setAttribute("errorMessage", ex.getMessage());
+			RequestDispatcher rd = sc.getRequestDispatcher("/jsp/Error.jsp");
+			rd.forward(request, response);
 		}
 	}
 	
@@ -133,18 +137,18 @@ public class HomeServlet extends HttpServlet {
 	 * month validation
 	 * */
 	private int validateMonth(String monthInput) throws ServletException {
-		if (monthInput != null || monthInput != "\"\"") {
+		if (monthInput == null || monthInput.equals("")) {
+			throw new ServletException("Nezadali jste mìsíc.");
+		} 
+		else {
 			int monthInt = Integer.valueOf(monthInput);
-			if(monthInt <= 12) {
+			if(monthInt <= 12 && monthInt > 0) {
 				validate(monthInput, false);
 			}
 			else {
 				throw new ServletException("Mìsíc mùže být maximálnì 12.");
 			}
 			return monthInt;
-		} 
-		else {
-			throw new ServletException("Nezadali jste mìsíc.");
 		}
 	}
 	
@@ -152,20 +156,20 @@ public class HomeServlet extends HttpServlet {
 	 * year validation
 	 * */
 	private int validateYear(String yearInput) throws ServletException {
-		if (yearInput != null || yearInput != "") {
-			validate(yearInput, false);
-			return Integer.valueOf(yearInput);
+		if (yearInput == null || yearInput.equals("") || Integer.valueOf(yearInput) == 0) {
+			throw new ServletException("Zadejte celé èíslo do kolonky rok.");
 		}
 		else {
-			throw new ServletException("Zadejte celé èíslo do kolonky rok.");
+			validate(yearInput, false);
+			return Integer.valueOf(yearInput);
 		}
 	}
 	
 	/*
 	 * validation of hours and replacing decimal comma with dot
 	 * */
-	private double validateHours(String hoursInput) throws ServletException {
-		if (hoursInput != null) {
+	private double validateHoursAndConvert(String hoursInput) throws ServletException {
+		if (!StringUtils.isEmpty(hoursInput)) {
 			validate(hoursInput, true);
 			//použití èárky místo desetinné teèky
 			boolean containsComma = hoursInput.contains(",");
@@ -176,6 +180,18 @@ public class HomeServlet extends HttpServlet {
 		}
 		else {
 			throw new ServletException("Zadejte hodiny ve tvaru \"4.0\". Tedy s desetinnou teèkou.");
+		}
+	}
+	
+	/*
+	 * we do not allow 0 or more than 24 hours
+	 * */
+	private double checkHoursNoLongerDay(Double hours) throws ServletException {
+		if (hours <= 24 && hours > 0) {
+			return hours;
+		} 
+		else {
+			throw new ServletException("Zadali jste více hodin než má 1 den.");
 		}
 	}
 }
