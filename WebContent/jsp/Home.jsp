@@ -46,7 +46,7 @@
 			</nav>
 		
 		<!-- uvodni sedy pruh -->
-		<div class="jumbotron"> 
+		<div class="jumbotron text-center"> 
 					<p>Kalkulačka spočítá počet dnů a hodin v zadaném měsíci a roce včetně a bez svátků.</p>
 		</div>
 		
@@ -58,7 +58,7 @@
     			<div class="col"></div>
     
     			<!-- prostření obsahovej panel -->
-    			<div class="col-6">
+    			<div class="col-6 text-center">
     			<form action="compute" method="POST">
             		<div class="input-group mb-3 input-group-sm">
   						<div class="input-group-prepend">

@@ -48,7 +48,7 @@
   				</div>
 			</nav>
 		
-		<div class="jumbotron"> 
+		<div class="jumbotron text-center"> 
 					<p>Výsledek</p>
 				</div>
 
@@ -61,7 +61,7 @@
     			<div class="col"></div>
     
     			<!-- prostření obsahovej panel -->
-    			<div class="col-4">
+    			<div class="col-8 text-center">
       				<p>Počet dnů</p>
       				<p><span class="text_background_yellow">${workingDays}</span></p>
     			</div>
@@ -74,7 +74,7 @@
     			<div class="col"></div>
     
     			<!-- prostření obsahovej panel -->
-    			<div class="col-4">
+    			<div class="col-8 text-center">
       				<p>Počet dnů se svátky</p>
       				<p><span class="text_background_yellow">${workingDaysWithoutHolidays}</span></p>
     			</div>
@@ -88,7 +88,7 @@
     			<div class="col"></div>
     
     			<!-- prostření obsahovej panel -->
-    			<div class="col-4">
+    			<div class="col-8 text-center">
       				<p>Počet hodin</p>
       				<p><span class="text_background_yellow">${workingHours}</span></p>
     			</div>
@@ -102,7 +102,7 @@
     			<div class="col"></div>
     
     			<!-- prostření obsahovej panel -->
-    			<div class="col-4">
+    			<div class="col-8 text-center">
       				<p>Počet hodin se svátky</p>
       				<p><span class="text_background_yellow">${workingHoursWithoutHOlidays}</span></p>
       				<br>
