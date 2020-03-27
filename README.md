@@ -3,7 +3,7 @@
 Malá java aplikace, která dokáže vyhledat podle zadaného měsíce a roku počet dnů a hodin bez i se svátky. Uživatel si může určit kolik hodin pracoval za jeden den.
 
 ### Účel
-Učelem aplikace je poskytnou alternativu ke klasickým plánovacích kalendářům ve kterých se špatně orientuje. Aplikace je dostupná na adrese.
+Učelem aplikace je poskytnou alternativu ke klasickým plánovacích kalendářům ve kterých se špatně orientuje. Aplikace je dostupná na adrese: TBD
 
 ### Pomoc s vývojem
 Pokud chcete pomoci s rozvojem tak si stáhněte repo a můžete začít programovat.
@@ -13,4 +13,4 @@ Pokud chcete pomoci s rozvojem tak si stáhněte repo a můžete začít program
 
 ### Kontakty
 Kontakovat autora můžete tady na Github.
-Nebo na (htpps://www.ppetr.cz)
+Nebo na (hwww.ppetr.cz

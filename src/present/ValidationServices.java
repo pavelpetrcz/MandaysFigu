@@ -8,6 +8,7 @@ import java.util.regex.Pattern;
 import javax.servlet.ServletException;
 
 import org.apache.commons.lang.StringUtils;
+import org.tinylog.Logger;
 
 /**
  * @author pavel
@@ -34,6 +35,7 @@ public class ValidationServices implements IValidationServices {
 				//business validation
 				if (yearInputInt > 2019 && yearInputInt < 2050) {
 					yearOut = yearInputInt;
+				Logger.info("neco");
 				}
 				else {
 					throw new ServletException("Rok musí být v rozmezí 2019-2050.");
