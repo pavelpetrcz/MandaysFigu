@@ -116,5 +116,4 @@ public class HomeServlet extends HttpServlet {
 			rd.forward(request, response);
 		}
 	}
-	
 }

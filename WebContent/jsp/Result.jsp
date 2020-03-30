@@ -92,7 +92,7 @@
       				<p>Počet hodin se svátky</p>
       				<p><span class="text_background_yellow">${workingHoursWithoutHOlidays}</span></p>
       				<br>
-      				<form action="Home.jsp">
+      				<form action="${pageContext.request.contextPath}">
 						<input type="submit" class="btn btn-primary btn-sm" value="Zpět">
 					</form>
     			</div>

@@ -40,7 +40,7 @@
     
     			<!-- prostření obsahovej panel -->
     			<div class="col-4 text-center">
-      				<form action="Home.jsp">
+      				<form action="${pageContext.request.contextPath}">
 						<input type="submit" class="btn btn-primary btn-sm" value="Zpět">
 					</form>	
     			</div>
