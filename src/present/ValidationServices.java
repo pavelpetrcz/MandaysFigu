@@ -35,12 +35,12 @@ public class ValidationServices implements IValidationServices {
 				//business validation
 				if (yearInputInt > 2019 && yearInputInt < 2050) {
 					yearOut = yearInputInt;
-				Logger.info("neco");
 				}
 				else {
 					throw new ServletException("Rok musí být v rozmezí 2019-2050.");
 				}
 			} catch (ServletException e) {
+				Logger.error("Year validation failed." + e.getMessage().toString());
 				throw new ServletException(e.getMessage());
 			}
 			return yearOut;
@@ -61,6 +61,7 @@ public class ValidationServices implements IValidationServices {
 					}
 				hoursOut = Double.parseDouble(hoursInput);
 			} catch (ServletException e) {
+				Logger.error("Hour validation failed." + e.getMessage().toString());
 				throw new ServletException(e.getMessage());
 			}
 			return hoursOut;
@@ -84,6 +85,7 @@ public class ValidationServices implements IValidationServices {
 				}
 				return monthOut;
 			} catch (ServletException e) {
+				Logger.error("Month validation failed." + e.getMessage().toString());
 				throw new ServletException(e.getMessage());
 			}
 	}

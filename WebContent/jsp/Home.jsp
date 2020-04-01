@@ -9,7 +9,7 @@
     		<meta name="viewport" content="width=device-width,initial-scale=1">
     		
     		<!-- vlastní styl -->
-    		<link rel="stylesheet" href="styles.css" type="text/css">
+    		<link rel="stylesheet" href="jsp/styles.css" type="text/css">
     		
     		<!-- Ikonky -->
     		<script src="https://unpkg.com/ionicons@5.0.0/dist/ionicons.js"></script>

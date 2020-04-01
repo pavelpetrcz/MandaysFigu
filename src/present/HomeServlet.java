@@ -13,6 +13,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import org.apache.commons.lang.StringUtils;
+import org.tinylog.Logger;
 
 import dao.RequestDao;
 import dao.ResultDao;
@@ -83,6 +84,7 @@ public class HomeServlet extends HttpServlet {
 			monthInt = vs.validateMonthAndConvert(monthInput);
 			yearInt = vs.validateYearAndConvert(yearInput);
 			hoursD = vs.checkHoursNoLongerDay(vs.validateHoursAndConvert(hoursInput));
+			Logger.info("User asked for: month:" + monthInput + ";yearInput:" + yearInput + ";hours:" + hoursInput);
 			
 			//set request to calculate with
 			req.setMonth(monthInt);
