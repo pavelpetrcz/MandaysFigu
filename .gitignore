@@ -1,1 +1,9 @@
+# Java related
+target/**
+*.jar
+*.war
+*.ear
+*.class
+*.project
 /target/
+resource/tinylog/tinylog.txt

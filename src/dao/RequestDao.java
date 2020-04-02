@@ -1,5 +1,7 @@
 package dao;
 
+import javax.servlet.http.HttpSession;
+
 public class RequestDao {
 	private int month;
 	private int quarter;
@@ -54,5 +56,8 @@ public class RequestDao {
 	 */
 	public void setYear(int year) {
 		this.year = year;
+	}
+	public HttpSession getSession() {
+		return null;
 	}
 }

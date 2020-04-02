@@ -10,9 +10,7 @@ import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.sql.*;
 import java.util.HashMap;
-import java.util.Properties;
-
-import org.apache.log4j.Logger;	
+import java.util.Properties;	
 
 public class DbConnect {
 	
@@ -28,21 +26,24 @@ public class DbConnect {
 		try {
 			Class.forName("org.postgresql.Driver");
 						
-			//setup connection to DB from environment variable
+		    //TEST
+		    //conn = DriverManager.getConnection("jdbc:postgresql://localhost:5432/mandays", "mandaysUser", "mandaysUser");
+		    //PROD
+		    //setup connection to DB from environment variable
 			URI dbUri = new URI(System.getenv("DATABASE_URL"));
 
-		    String username = dbUri.getUserInfo().split(":")[0];
+			String username = dbUri.getUserInfo().split(":")[0];
 		    String password = dbUri.getUserInfo().split(":")[1];
 		    String dbUrl = "jdbc:postgresql://" + dbUri.getHost() + ':' + dbUri.getPort() + dbUri.getPath();
 		    //establish connection and return
-			conn = DriverManager.getConnection(dbUrl, username, password);
+		    conn = DriverManager.getConnection(dbUrl, username, password);
 			}
 	    catch (SQLException e) {
 	        e.printStackTrace();
 	    	}
-		catch (URISyntaxException ex) {
-			ex.printStackTrace();
-		}
+		/*
+		 * catch (URISyntaxException ex) { ex.printStackTrace(); }
+		 */
 		catch (ClassNotFoundException exc) {
 			exc.printStackTrace();
 		}
@@ -69,8 +70,8 @@ public class DbConnect {
 				data.put("year", result.getInt("year"));
 			}
 		} catch (SQLException e) {
-			final Logger logger = Logger.getLogger(DbConnect.class);
-			logger.error("SQL query in DbConnect.java failed:" + DbConnect.readProperties());
+			//final Logger logger = Logger.getLogger(DbConnect.class);
+			//logger.error("SQL query in DbConnect.java failed:" + DbConnect.readProperties());
 			e.printStackTrace();
 		}
 		return data;
