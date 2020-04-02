@@ -56,10 +56,28 @@ public class HomeServlet extends HttpServlet {
 
 
 	/**
+	 * @throws IOException 
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
     @Override
-	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException {
+	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+    	ServletContext sc = getServletContext();
+		try {
+			
+	    	RequestDispatcher rd = sc.getRequestDispatcher("/jsp/Home.jsp");
+			rd.forward(request, response);
+		} catch (ServletException e) {
+			sc.setAttribute("errorMessage", e.getMessage());
+			RequestDispatcher rd = sc.getRequestDispatcher("/jsp/Error.jsp");
+			rd.forward(request, response);
+			e.printStackTrace();
+		} catch (IOException e) {
+			sc.setAttribute("errorMessage", e.getMessage());
+			RequestDispatcher rd = sc.getRequestDispatcher("/jsp/Error.jsp");
+			rd.forward(request, response);
+			e.printStackTrace();
+			e.printStackTrace();
+		}
     }
 
 	/**

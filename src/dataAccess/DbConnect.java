@@ -28,7 +28,8 @@ public class DbConnect {
 						
 		    //TEST
 		    //conn = DriverManager.getConnection("jdbc:postgresql://localhost:5432/mandays", "mandaysUser", "mandaysUser");
-		    //PROD
+		    
+			//PROD
 		    //setup connection to DB from environment variable
 			URI dbUri = new URI(System.getenv("DATABASE_URL"));
 
