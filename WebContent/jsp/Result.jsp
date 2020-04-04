@@ -31,7 +31,7 @@
     	<body class="text-monospace">
     		<!-- Navigační lišta -->
     		<nav class="navbar navbar-dark bg-dark sticky-top">
-  				<a class="navbar-brand" href="Home.jsp">Mandays</a>
+  				<a class="navbar-brand" href="https://mandayscz.herokuapp.com/">Mandays</a>
 			</nav>
 		
 		<div class="jumbotron text-center"> 
@@ -48,8 +48,8 @@
     
     			<!-- prostření obsahovej panel -->
     			<div class="col-8 text-center">
-      				<p>Počet dnů</p>
-      				<p><span class="text_background_yellow">${workingDays}</span></p>
+    			<p>Ve zvoleném měsíci je pracovních </p>
+      				<p><span class="text_background_yellow">${workingDaysWithoutHolidays}</span> dnů,</p>
     			</div>
    			 		<!-- Pravy prázdnej panel -->
     				<div class="col"></div>
@@ -61,8 +61,21 @@
     
     			<!-- prostření obsahovej panel -->
     			<div class="col-8 text-center">
-      				<p>Počet dnů se svátky</p>
-      				<p><span class="text_background_yellow">${workingDaysWithoutHolidays}</span></p>
+      				<p>resp. <span class="text_background_yellow">${workingHoursWithoutHOlidays}</span> hodin.</p>
+    			</div>
+
+   			 		<!-- Pravy prázdnej panel -->
+    				<div class="col"></div>
+  			</div>
+  				
+  			<div class="row">
+  				<!-- Levy prázdnej panel -->
+    			<div class="col"></div>
+    
+    			<!-- prostření obsahovej panel -->
+    			<div class="col-8 text-center top-margin">
+    				<p>Po započtení svátků jako pracovních</p>
+      				<p><span class="text_background_yellow">${workingDays}</span> dnů,</p>
     			</div>
 
    			 		<!-- Pravy prázdnej panel -->
@@ -75,22 +88,7 @@
     
     			<!-- prostření obsahovej panel -->
     			<div class="col-8 text-center">
-      				<p>Počet hodin</p>
-      				<p><span class="text_background_yellow">${workingHours}</span></p>
-    			</div>
-
-   			 		<!-- Pravy prázdnej panel -->
-    				<div class="col"></div>
-  			</div>
-  				
-  			<div class="row">
-  				<!-- Levy prázdnej panel -->
-    			<div class="col"></div>
-    
-    			<!-- prostření obsahovej panel -->
-    			<div class="col-8 text-center">
-      				<p>Počet hodin se svátky</p>
-      				<p><span class="text_background_yellow">${workingHoursWithoutHOlidays}</span></p>
+      				<p>resp. <span class="text_background_yellow">${workingHours}</span> hodin.</p>
       				<br>
       				<form action="${pageContext.request.contextPath}">
 						<input type="submit" class="btn btn-primary btn-sm" value="Zpět">
