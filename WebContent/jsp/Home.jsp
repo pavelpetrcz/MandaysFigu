@@ -35,13 +35,13 @@
     	<body class="text-monospace">
     		<!-- Navigační lišta -->
 			<nav class="navbar navbar-dark bg-dark sticky-top">
-  				<a class="navbar-brand" href="Home.jsp">Mandays</a>
+  				<a class="navbar-brand" href="https://mandayscz.herokuapp.com/">Mandays</a>
 			</nav>
 		
 		<!-- Jumbotron -->
 		<div class="jumbotron text-center"> 
-			<p>Kalkulačka spočítá počet dnů a&nbsp;hodin v&nbsp;zadaném měsíci a&nbsp;roce včetně a&nbsp;bez svátků.</p> 
-			<p>Dobrý pomocníček pro živnostníky a&nbsp;ostatní.</p>
+			<p>Kalkulačka spočítá počet pracovních dnů a&nbsp;hodin v&nbsp;zadaném měsíci a&nbsp;roce.</p> 
+			<p>Dobrý pomocníček pro živnostníky a&nbsp;freelancery.</p>
 		</div>
 		
 		<!-- Kontejner 1 -->
@@ -87,10 +87,10 @@
 				    <!-- Obsahový sloupec -->
 				    <div class="col-8 text-center">
 				    	<ion-icon name="git-branch-outline" size="large"></ion-icon>
-				      	<h5>API</h5>
+				      	<h5 class="h-style">API</h5>
 				      	<p>Nevyhovuje vám přístup přes formulář? Data můžete získat i strojově.</p>
-				      	<a href="https://app.swaggerhub.com/apis-docs/pavelpetrcz/Mandays/1.0.0#/default/searchInventory" target="_blank" type="button" class="btn btn-primary btn-sm" role="button">Dokumentace API</a>
-				      	<a href="https://github.com/pavelpetrcz/MandaysFigu" target="_blank" type="button" class="btn btn-primary btn-sm" role="button">GitHub</a>
+				      	<a href="https://app.swaggerhub.com/apis-docs/pavelpetrcz/Mandays/1.0.0#/default/searchInventory" target="_blank" type="button" class="button-style btn btn-primary btn-sm" role="button">Dokumentace API</a>
+				      	<a href="https://github.com/pavelpetrcz/MandaysFigu" target="_blank" type="button" class="btn btn-primary btn-sm button-style" role="button">GitHub</a>
 				    </div>
 				    
 				    <div class="col"></div>
@@ -105,7 +105,7 @@
 				    <!-- Obsahový sloupec -->
 				    <div class="col-8 text-center">
 				    	<ion-icon name="person-outline" size="large"></ion-icon>
-				      	<h5>Kontakty</h5>
+				      	<h5 class="h-style">Kontakty</h5>
 				      	<p>Využijte těchto odkazů.</p>
 				      	
 				      	<a href="mailto:pavelpetrcz@gmail.com" target="_blank"><ion-icon name="mail-outline"  class="ion-icon"></ion-icon></a>

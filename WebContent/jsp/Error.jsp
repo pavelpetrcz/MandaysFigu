@@ -23,7 +23,7 @@
     	<body class="text-monospace">
     		<!-- Navigační lišta -->
     		<nav class="navbar navbar-dark bg-dark sticky-top">
-  				<a class="navbar-brand" href="Home.jsp">Mandays</a>
+  				<a class="navbar-brand" href="https://mandayscz.herokuapp.com/">Mandays</a>
 			</nav>
 		
 		<div class="jumbotron"> 

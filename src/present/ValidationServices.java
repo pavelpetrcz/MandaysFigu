@@ -19,7 +19,7 @@ public class ValidationServices implements IValidationServices {
 	public int validateYearAndConvert(String yearInput) throws ServletException {
 		int yearInputInt = 0;
 		int yearOut = 0	;
-		String er = "Zadejte celé èíslo do kolonky rok - napø. 2020.";
+		String er = "Zadejte celÃ© ÄÃ­slo do kolonky rok - napÅ™. 2020.";
 		
 			try {
 				//validations
@@ -37,7 +37,7 @@ public class ValidationServices implements IValidationServices {
 					yearOut = yearInputInt;
 				}
 				else {
-					throw new ServletException("Rok musí bıt v rozmezí 2019-2050.");
+					throw new ServletException("Rok musÃ­ bÃ½t v rozmezÃ­ 2019-2050.");
 				}
 			} catch (ServletException e) {
 				Logger.error("Year validation failed." + e.getMessage().toString());
@@ -47,7 +47,7 @@ public class ValidationServices implements IValidationServices {
 	}
 
 	public double validateHoursAndConvert(String hoursInput) throws ServletException {
-		String er = "Zadejte do kolonky hodiny èíslo s des. teèkou (\"4.0\") nebo celé èíslo (\"8\")."; 
+		String er = "Zadejte do kolonky hodiny ÄÃ­slo s des. teÄkou (\"4.0\") nebo celÃ© ÄÃ­slo (\"8\")."; 
 		Double hoursOut;
 			try {
 				validateNotEmptyString(hoursInput, er);
@@ -68,7 +68,7 @@ public class ValidationServices implements IValidationServices {
 		}
 	
 	public int validateMonthAndConvert(String monthInput) throws ServletException {
-			String er = "Zadejte celé èíslo do kolonky mìsíc - napø. 5.";
+			String er = "Zadejte celÃ© ÄÃ­slo do kolonky mÄ›sÃ­c - napÅ™. 5.";
 			int monthOut = 0;
 			try {
 				validateNotEmptyString(monthInput, er);
@@ -81,7 +81,7 @@ public class ValidationServices implements IValidationServices {
 					monthOut = monthInt; 
 				}
 				else {
-					throw new ServletException("Mìsíc mùe bıt maximálnì 12.");
+					throw new ServletException("MÄ›sÃ­c mÅ¯Å¾e bÃ½t maximÃ¡lnÄ› 12.");
 				}
 				return monthOut;
 			} catch (ServletException e) {
@@ -95,7 +95,7 @@ public class ValidationServices implements IValidationServices {
 			return hours;
 		} 
 		else {
-			throw new ServletException("Zadali jste více hodin ne má 1 den.");
+			throw new ServletException("Zadali jste vÃ­ce hodin neÅ¾ mÃ¡ 1 den.");
 		}
 	}
 	
